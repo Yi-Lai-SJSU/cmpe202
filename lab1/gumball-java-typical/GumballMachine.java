@@ -12,10 +12,10 @@ public class GumballMachine
         this.num_gumballs = size;
         this.num_cents = 0;
 
-        switch (type) {
-            case 0: gmType = new GMType(new int[]{25}, 25); break;
-            case 1: gmType = new GMType(new int[]{25}, 50); break;
-            case 2: gmType = new GMType(new int[]{5,10,25},50); break;
+        switch (type) { 
+            case 0: gmType = new GMType(new int[]{25}, 25); break; //for type 0: the valid coin is 25, the cost of each gumball is 25;
+            case 1: gmType = new GMType(new int[]{25}, 50); break; //for type 1: the valid coin is 25, the cost of each gumball is 50;
+            case 2: gmType = new GMType(new int[]{5,10,25},50); break; // for type 2: the valid coins are 5, 10, 25, the cost of each gumball is 50;
             default: System.out.println("Please input the correct Machine type number: 0 or 1 or 2"); break;
         }
     }
