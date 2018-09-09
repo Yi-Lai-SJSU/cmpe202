@@ -1,0 +1,82 @@
+GumballMachine setup: call the Constructor
+        GumballMachine gumballMachine = new GumballMachine(size, type);
+              size: how many gumballs inside at the beginning, 
+              type from (0,1,2): type 0 -> quarter machine
+                                 type 1 -> two quarter machine
+                                 type 2 -> slot machine
+        in the Constructor: 
+        switch (machineType) {
+            case 0:
+                gmType = new GMType(new int[]{25}, 25); // quarter machine
+                break;
+            case 1:
+                gmType = new GMType(new int[]{25}, 50); //two quarter machine
+                break;
+            case 2:
+                gmType = new GMType(new int[]{5, 10, 25}, 50); //slot machine
+                break;
+            default:
+                gmType = new GMType(new int[]{}, 0);  // can add any types here
+                break;
+        }
+        
+        GMType is a nested class in the Gumball Machine class whoes task is to record the valid coins set and cost of gumball
+        
+    class GMType {
+        private int[] accepted_Coins;
+        private int thresholdOfCoins;
+
+        GMType(int[] accepted_Cions, int thresholdOfCoins) {
+            this.accepted_Coins = accepted_Cions;
+            this.thresholdOfCoins = thresholdOfCoins;
+        }
+
+        boolean isCoinAccepted(int valueOfCoin) {
+            boolean isAccepted = false;
+            for (int i = 0; i < accepted_Coins.length; i++) {
+                if (valueOfCoin == accepted_Coins[i]) {
+                    isAccepted = true;
+                    break;
+                }
+            }
+            return isAccepted;
+        }
+
+        boolean isMoneyEnough() {
+            boolean isEnoughMoney = false;
+            if (getAmount_Coins() >= this.thresholdOfCoins) {
+                isEnoughMoney = true;
+            }
+            return isEnoughMoney;
+        }
+        
+        int getThresholdOfCoins() {
+            return thresholdOfCoins;
+        }
+
+        @Override
+        public String toString() {
+            return "Valid Cion is in set of " + Arrays.toString(accepted_Coins);
+        }
+    }
+    
+    so, it is very easy to add any other type of gumball machine: add a new case like this:
+    switch (machineType) {
+            case 0:
+                gmType = new GMType(new int[]{25}, 25); // quarter machine
+                break;
+            case 1:
+                gmType = new GMType(new int[]{25}, 50); //two quarter machine
+                break;
+            case 2:
+                gmType = new GMType(new int[]{5, 10, 25}, 50); //slot machine
+                break;
+            case 3:
+                gmType = new GMType(new int[]{1,5,10,25,100}, 100); // add a new type of gumball Machine;
+            default:
+                gmType = new GMType(new int[]{}, 0);  // can add any types here
+                break;
+        }
+    
+  
+    
