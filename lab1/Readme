@@ -21,7 +21,8 @@
         }
     }
   
-    It is very easy to add any other type of gumball machine in the constructor of GumballMachine Class: 
+    It is very easy to add any another type of gumball machine in the constructor of GumballMachine Class: 
+    
     switch (machineType) {
             case 0:
                 gmType = new GMType(new int[]{25}, 25); // quarter machine
