@@ -121,7 +121,7 @@ public class GumballMachine {
         if (numberGumballs != 1) {
             result.append("s");
         }
-        result.append(". The amount of of Coins is: " + amount_Coins + "------------------");
+        result.append(". The amount of of Coins is: " + amount_Coins + ".");
         result.append("\n");
         result.append("Machine is " + state + "\n");
         return result.toString();
