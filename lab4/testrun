@@ -1,0 +1,153 @@
+add customerList and tableList to Observer!
+Attach Observer...
+Attach Observer...
+
+1. customer1 coming...
+Accept a new resource... 
+The current List of Customer is: 
+[
+ lastName='customer1' , ID='4084440981', size=1]
+]
+No available peer resource.
+
+2. customer2 coming...
+Accept a new resource... 
+The current List of Customer is: 
+[
+ lastName='customer1' , ID='4084440981', size=1], 
+ lastName='customer2' , ID='4088211982', size=1]
+]
+No available peer resource.
+
+3. customer3 coming...
+Accept a new resource... 
+The current List of Customer is: 
+[
+ lastName='customer1' , ID='4084440981', size=1], 
+ lastName='customer2' , ID='4088211982', size=1], 
+ lastName='customer3' , ID='408666666', size=0]
+]
+No available peer resource.
+
+4. table1 coming...
+Accept a new resource... 
+The current List of Table is: 
+[
+Table{}ID='table1', size=0]
+]
+Resource matched...
+Start to distribute resource in the distributor....
+408666666:   Table No.table1 is ready for you.
+Distributor map is: 
+{
+ lastName='customer3' , ID='408666666', size=0] =Table{}ID='table1', size=0]
+}
+
+5. table2 coming...
+Accept a new resource... 
+The current List of Table is: 
+[
+Table{}ID='table2', size=1]
+]
+Resource matched...
+Start to distribute resource in the distributor....
+4084440981:   Table No.table2 is ready for you.
+Distributor map is: 
+{
+ lastName='customer3' , ID='408666666', size=0] =Table{}ID='table1', size=0], 
+ lastName='customer1' , ID='4084440981', size=1]=Table{}ID='table2', size=1]
+}
+
+6. table3 coming...
+Accept a new resource... 
+The current List of Table is: 
+[
+Table{}ID='table3', size=1]
+]
+Resource matched...
+Start to distribute resource in the distributor....
+4088211982:   Table No.table3 is ready for you.
+Distributor map is: 
+{
+ lastName='customer3' , ID='408666666', size=0] =Table{}ID='table1', size=0], 
+ lastName='customer2' , ID='4088211982', size=1] =Table{}ID='table3', size=1], 
+ lastName='customer1' , ID='4084440981', size=1] =Table{}ID='table2', size=1]
+}
+
+7. table4 coming...
+Accept a new resource... 
+The current List of Table is: 
+[
+Table{}ID='table4', size=1]
+]
+No available peer resource.
+
+8. customer4 coming...
+Accept a new resource... 
+The current List of Customer is: 
+[
+ lastName='customer4' , ID='408888888', size=0]
+]
+
+9. customer1 cancelled:
+Release a table because the customer cancelled
+{
+ lastName='customer3' , ID='408666666', size=0]=Table{}ID='table1', size=0], 
+ lastName='customer2' , ID='4088211982', size=1]=Table{}ID='table3', size=1]}
+Accept a new resource... 
+The current List of Table is: 
+[
+Table{}ID='table4', size=1], Table{}ID='table2', size=1]
+]
+Distributor map is: 
+{
+ lastName='customer3' , ID='408666666', size=0]=Table{}ID='table1', size=0], 
+ lastName='customer2' , ID='4088211982', size=1]=Table{}ID='table3', size=1]}
+
+10. customer2 cancelled:
+Release a table because the customer cancelled
+{
+ lastName='customer3' , ID='408666666', size=0]=Table{}ID='table1', size=0]}
+Accept a new resource... 
+The current List of Table is: 
+[
+Table{}ID='table4', size=1], 
+Table{}ID='table2', size=1], 
+Table{}ID='table3', size=1]
+]
+Distributor map is: 
+{
+ lastName='customer3' , ID='408666666', size=0]=Table{}ID='table1', size=0]}
+
+11. customer3 come back on time:
+Distribute a table to a customer.
+{}
+Distributor map is: 
+{}
+
+12. customer4 come back on time:
+Please wait until receive a notify message.
+Distributor map is: 
+{}
+
+13. customer5 coming...
+Accept a new resource... 
+The current List of Customer is: 
+[
+ lastName='customer4' , ID='408888888', size=0], 
+ lastName='customer5' , ID='4084440981', size=0]
+]
+
+14. customer6 coming...
+Accept a new resource... 
+The current List of Customer is: 
+[
+ lastName='customer4' , ID='408888888', size=0], 
+ lastName='customer5' , ID='4084440981', size=0], 
+ lastName='customer6' , ID='4088211982', size=1]
+]
+Resource matched...
+Start to distribute resource in the distributor....
+4088211982:   Table No.table4 is ready for you.
+
+Process finished with exit code 0
