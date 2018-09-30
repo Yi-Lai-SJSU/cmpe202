@@ -1,15 +1,113 @@
 1. CRC card
  _________________________________________________
-|                      Table                      |
+|                      Table                      |     
 |_________________________________________________|
 |Maintain the character of each table |   Subject |
 |_____________________________________|___________|
 
+ ____________________________________________________
+|               Subject (for Table)                  |
+|____________________________________________________|
+|Subject for table maintains an ordered  |           |
+|list of tables and provides information |    Table  |
+|about this list.                        |           |
+|----------------------------------------|-----------|
+|Receives a new table:                   |           |
+| 1. Add new table to list;              |  Observer |
+| 2. Invoke a method in observer to match|           |
+| the new table to the customer.         |           |
+|----------------------------------------|-----------|
+| Remove a matched table from the list;  |           |
+|________________________________________|___________|
 
----------------------------------------------------
-|                   Custeomer                     |
----------------------------------------------------
-|Maintain the character of each table |   Subject |
----------------------------------------------------
+ _________________________________________________
+|                      Customer                   |
+|_________________________________________________|
+|Maintain the character of each Customer |Subject |
+|________________________________________|________|
+
+ ____________________________________________________
+|               Subject (for customer)               |
+|____________________________________________________|
+|Subject for customer maintains an       |           |
+|ordered list of tables and provides     |  Customer |
+|information about this list.            |           |
+|----------------------------------------|-----------|
+|Receives a new customer:                |           |
+| 1. Add new customer to list;           |  Observer |
+| 2. Invoke a method in observer to match|           |
+| the new customer to a table.           |           |
+|----------------------------------------|-----------|
+| Remove a matched table from the list;  |           |
+|________________________________________|___________|
+
+ ____________________________________________________
+|                     Observer                       |
+|____________________________________________________|
+|Each two list:                          |           |
+|tableList and customerList .            |  Subject  |
+|----------------------------------------|-----------|
+|Match a new customer with a table.      |           |
+|Match a new table with a customer.      |Distributor|
+|----------------------------------------|-----------|
+| When finds two matched resource,       |           |
+| invoke the distributor to map the      |           |
+| two resources together.                |           |
+|----------------------------------------|-----------|
+|Recycle a table that the matched        |           |
+|customer has cancelled.                 |           |
+|________________________________________|___________|
+
+ ____________________________________________________
+|                     Distributor                    |
+|____________________________________________________|
+|Maintains a HashMap that record all     |  Customer |
+|the matched <customer, table> pairs     |   Table   |
+|----------------------------------------|-----------|
+|Map the matched <customer, table> pair  |           |
+|together.                               | Observer  |
+|----------------------------------------|-----------|
+|Notify the customer table is available. |           |
+|----------------------------------------|-----------|
+| Distribute the table to the customer   |           |
+| when the customer arrives in time.     |           |
+|----------------------------------------|-----------|
+|Release the table to the resource list  |           |
+|when the customer cancelled the         |           |
+|reservation.                            |           |
+|________________________________________|___________|
+
+2. Design Pattern:  Observer 
+   There are two Subject-Observer relation: 
+   ------------------------------------------------------------------------
+        Subject customerList = new Subject();
+        Subject tableList = new Subject();
+        Observer observer = new Observer(customerList, tableList);
+        customerList.attachObserver(observer);
+        tableList.attachObserver(observer);
+   ------------------------------------------------------------------------
+        Distributor distributor = new Distributor(observer);
+        observer.attachDistributor(distributor);
+   ------------------------------------------------------------------------
+(1) Subject is the subject and Observer is the Observer
+    Each time when a new resource (customer or table) coming, the subject will notify 
+    the Observer to match a peer resource to this new resource: 
+    ------------------------------------------------------------
+    public void receiveResource (Resource resource) {
+        acceptResource(resource);
+        observer.match(resource);
+    }
+(2) Obverser is Subject and Distributor is Observer
+    Each time when there is a matched customer and table pair, the Observer will notify 
+    the Distributor to map the resources pair together and handle the following action,
+    like a customer cancels the reservation or a customer return back in time.
+    ---------------------------------------------------------------
+    public void distribute(Resource resource1, Resource resource2) {
+        System.out.println("Start to distribute resource in the distributor....");
+        distributor.addCustomerTablePair(resource1, resource2);
+    }
+  
+
+
 
 
