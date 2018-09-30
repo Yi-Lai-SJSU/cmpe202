@@ -6,7 +6,7 @@
 |_____________________________________|___________|
 
  ____________________________________________________
-|               Subject (for Table)                  |
+|               Subject (TableList)                  |
 |____________________________________________________|
 |Subject for table maintains an ordered  |           |
 |list of tables and provides information |    Table  |
@@ -27,7 +27,7 @@
 |________________________________________|________|
 
  ____________________________________________________
-|               Subject (for customer)               |
+|               Subject (CustomerList)               |
 |____________________________________________________|
 |Subject for customer maintains an       |           |
 |ordered list of tables and provides     |  Customer |
@@ -38,13 +38,13 @@
 | 2. Invoke a method in observer to match|           |
 | the new customer to a table.           |           |
 |----------------------------------------|-----------|
-| Remove a matched table from the list;  |           |
+| Remove a table from the list.          |           |
 |________________________________________|___________|
 
  ____________________________________________________
 |                     Observer                       |
 |____________________________________________________|
-|Each two list:                          |           |
+|Each observer maintain two list:        |           |
 |tableList and customerList .            |  Subject  |
 |----------------------------------------|-----------|
 |Match a new customer with a table.      |           |
@@ -54,8 +54,7 @@
 | invoke the distributor to map the      |           |
 | two resources together.                |           |
 |----------------------------------------|-----------|
-|Recycle a table that the matched        |           |
-|customer has cancelled.                 |           |
+|Recycle a table that has been cancelled |           |
 |________________________________________|___________|
 
  ____________________________________________________
