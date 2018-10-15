@@ -1,5 +1,8 @@
 ![](https://github.com/Yi-Lai_SJSU/cmpe202/lab6/run-result.png)
 
+
+![](http://www.baidu.com/img/bdlogo.gif)  
+
 2018-10-13 19:53:10
          FIVE GUYS
 
