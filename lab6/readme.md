@@ -1,6 +1,5 @@
 ![](https://github.com/Yi-Lai_SJSU/cmpe202/lab6/run-result.png)
 
-
 2018-10-13 19:53:10
          FIVE GUYS
 
