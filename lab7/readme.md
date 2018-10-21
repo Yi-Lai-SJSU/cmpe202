@@ -1,10 +1,4 @@
 The main change is:
-------------------------
-Composite order = new Composite("Build You Own Burger");
-        String[] bo = { "Organic Bison*", "1/2lb.", "On A Bun" } ;
-        Burger b = new Burger(bo);
-        order.addChild(b);
-        .......
         
         in the Composite class:
         public void addChild (Component c) {
