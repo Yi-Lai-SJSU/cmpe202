@@ -15,7 +15,12 @@ public class CreditCardExp implements IDisplayComponent, IKeyEventHandler
     	if (date.length() == 0) {
     		return iDecoratorDisplay.display(initial_date);
 		} else {
-    		return iDecoratorDisplay.display(date);
+    		if(date.length() == 4) {
+    			if(!isInvalid()) {
+    				date =  "----";
+				}
+			}
+			return iDecoratorDisplay.display(date);
 		}
 	}	
 
@@ -29,7 +34,20 @@ public class CreditCardExp implements IDisplayComponent, IKeyEventHandler
 		}
 		else if ( nextHandler != null )
 			nextHandler.key(ch, cnt) ;
-	}	
+	}
+
+	public boolean isInvalid() {
+    	try{
+    		int month = Integer.parseInt(date.substring(0,2));
+			if ( month <= 12 ) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (NumberFormatException err) {
+    		return false;
+		}
+	}
 
 	public void addSubComponent( IDisplayComponent c ) {
 		return ; // do nothing
