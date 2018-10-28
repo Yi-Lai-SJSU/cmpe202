@@ -14,7 +14,7 @@ public class App {
     public App() {
 
         screen = new Screen();
-        num = new CreditCardNum();
+        num = new CreditCardNum(16);
         exp = new CreditCardExp();
         cvc = new CreditCardCVC();
 

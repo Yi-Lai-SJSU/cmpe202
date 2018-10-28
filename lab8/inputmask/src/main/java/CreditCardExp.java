@@ -2,23 +2,20 @@
 
 public class CreditCardExp implements IDisplayComponent, IKeyEventHandler
 {
-
 	private IKeyEventHandler nextHandler ;
 	private String date = "" ;
+	private String initial_date = "MMYY";
+	private IDecoratorDisplay iDecoratorDisplay = new DecoratorCardExp();
 
     public void setNext( IKeyEventHandler next) {
     	this.nextHandler = next ;
     }	
 
 	public String display() {
-		if ( date.equals("") ) {
-			return "[MM/YY]" + "  " ;
+    	if (date.length() == 0) {
+    		return iDecoratorDisplay.display(initial_date);
 		} else {
-			int section = (date.length()-1)/2;
-			switch (section) {
-				case 0: return "[" + date + "]" + "  " ;
-				default: return "[" + date.substring(0, 2) + "/" + date.substring(2) + "]" + "  " ;
-			}
+    		return iDecoratorDisplay.display(date);
 		}
 	}	
 

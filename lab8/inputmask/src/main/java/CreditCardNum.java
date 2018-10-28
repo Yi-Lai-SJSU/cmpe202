@@ -1,29 +1,26 @@
 /* (c) Copyright 2018 Paul Nguyen. All Rights Reserved */
 
 public class CreditCardNum implements IDisplayComponent, IKeyEventHandler {
-
 	private IKeyEventHandler nextHandler;
 	private String number = "";
+	private String initial_Content= "";
+	private int length;
+	private IDecoratorDisplay iDecoratorDisplay = new DecoratorCardNum();
+
+	public CreditCardNum(int length) {
+		this.length = length;
+		setInitialContent(this.length);
+	}
 
 	public void setNext(IKeyEventHandler next) {
 		this.nextHandler = next;
 	}
 
 	public String display() {
-		String out = "[";
-		if (number.equals("")) {
-			return "[4444 4444 4444 4444]" + "  ";
+		if (number.length() == 0) {
+			return iDecoratorDisplay.display(initial_Content);
 		} else {
-			int sections = (number.length() -1 ) / 4;
-			for (int i = 0; i < sections + 1 ; i++) {
-				if (number.length() > (i + 1) * 4) {
-					out += number.substring(i * 4, (i + 1) * 4) + " ";
-				} else {
-					out += number.substring(i*4);
-				}
-			}
-			out += "]" + "  ";
-			return out;
+			return iDecoratorDisplay.display(number);
 		}
 	}
 
@@ -43,4 +40,9 @@ public class CreditCardNum implements IDisplayComponent, IKeyEventHandler {
 		return ; // do nothing
 	}
 
+	private void setInitialContent(int length) {
+		for (int i =0; i < length; i++) {
+			this.initial_Content += "4";
+		}
+	}
 }
