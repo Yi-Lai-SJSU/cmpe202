@@ -28,6 +28,21 @@ public class Main {
                     strategyTest.operate();
                     break;
             }
+
+            switch(number%3) {
+                case 0:
+                    strategyTest.setIstrategy((String message) -> System.out.println("{" + message + "}"));
+                    strategyTest.operate();
+                    break;
+                case 1:
+                    strategyTest.setIstrategy((String message) -> System.out.println("[" + message + "]"));
+                    strategyTest.operate();
+                    break;
+                case 2:
+                    strategyTest.setIstrategy((String message) -> System.out.println("<" + message + ">" ));
+                    strategyTest.operate();
+                    break;
+            }
         }
     }
 }
