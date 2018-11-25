@@ -1,10 +1,16 @@
 
-public privileged aspect COST50 {
-
+public privileged aspect GumballCost25 {
+	
 	// Initialize Cost of Gumball 
 	after() returning(GumballMachine m) : call(GumballMachine.new(..)) {
-		m.setCost(50) ;
+		m.setCost(25) ;
 	}
-		
+
+	
 	
 }
+
+
+
+
+

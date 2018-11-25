@@ -1,6 +1,4 @@
-
-
-public privileged aspect SLOTMODEL {
+public privileged aspect GumballSlotModel {
 
 	// Declarations
 	declare parents: GumballMachine implements IGumballMachineSlot;
@@ -22,20 +20,27 @@ public privileged aspect SLOTMODEL {
 
 	// Test
 	after() : execution(static * *.main(..) ) {
-		System.out.println("\n\n***** Gumball Machine Slot Model 2.0 *****\n\n");
+		System.out.println("***** Gumball Machine Crank Model 2.0 *****");
 		GumballMachine m = new GumballMachine(10);
 		m.dumpConfig();
 		m.insertCoin(10) ;
+		m.dumpConfig();
 		m.insertCoin(5);
+		m.dumpConfig();
 		m.returnCoins();  // return 15 cents change
+		m.dumpConfig();
 		m.insertCoin(50) ; // ejects gumball
+		m.dumpConfig();
 		m.insertCoin(100) ; // ejects gumball + 50 cents change
+		m.dumpConfig();
 		m.insertCoin(25) ;
+		m.dumpConfig();
 		m.insertCoin(10) ;
+		m.dumpConfig();
 		m.insertCoin(5) ;
+		m.dumpConfig();
 		m.insertCoin(10) ; // ejects gumball 
-		m.dumpConfig() ;
-		
-	}	
-	
+		m.dumpConfig();
+	}
+
 }

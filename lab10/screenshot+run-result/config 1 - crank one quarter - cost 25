@@ -1,0 +1,55 @@
+***** Class Bytecode Dump *****
+public static void GumballMachine.main(java.lang.String[])
+public void GumballMachine.insertQuarter()
+public void GumballMachine.turnTheCrank()
+public int GumballMachine.ajc$privMethod$GumballOneQuarter$GumballMachine$getCoinValue()
+public void GumballMachine.ajc$privMethod$GumballCost25$GumballMachine$setCost(int)
+public void GumballMachine.ajc$privMethod$GumballCrankModel$GumballMachine$ejectGumball()
+public void GumballMachine.ajc$privMethod$GumballCrankModel$GumballMachine$insertCoinValue(int)
+public void GumballMachine.dumpConfig()
+public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException
+public final native void java.lang.Object.wait(long) throws java.lang.InterruptedException
+public final void java.lang.Object.wait() throws java.lang.InterruptedException
+public boolean java.lang.Object.equals(java.lang.Object)
+public java.lang.String java.lang.Object.toString()
+public native int java.lang.Object.hashCode()
+public final native java.lang.Class java.lang.Object.getClass()
+public final native void java.lang.Object.notify()
+public final native void java.lang.Object.notifyAll()
+***** Gumball Machine Crank Model 1.0 *****
+Gumball Inventory: 10
+Gumball Cost:      25
+Coin Value:        0
+=> Insert Quarter...
+Added 25 cents...
+Gumball Inventory: 10
+Gumball Cost:      25
+Coin Value:        25
+=> Turn The Crank...
+Gumball Ejected!
+Change Return: 0 cents.
+=> Insert Quarter...
+Added 25 cents...
+Gumball Inventory: 9
+Gumball Cost:      25
+Coin Value:        25
+=> Turn The Crank...
+Gumball Ejected!
+Change Return: 0 cents.
+=> Insert Quarter...
+Added 25 cents...
+Gumball Inventory: 8
+Gumball Cost:      25
+Coin Value:        25
+=> Insert Quarter...
+Added 25 cents...
+Gumball only costs one Quarter!
+Gumball Inventory: 8
+Gumball Cost:      25
+Coin Value:        50
+=> Turn The Crank...
+Gumball Ejected!
+Change Return: 25 cents.
+Gumball Inventory: 7
+Gumball Cost:      25
+Coin Value:        0

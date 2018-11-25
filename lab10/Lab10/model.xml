@@ -6,26 +6,26 @@
 				<description>
 					
 				</description>
-				<alt abstract="true" mandatory="true" name="MODEL">
+				<alt abstract="true" mandatory="true" name="Model">
 					<description>
 						
 					</description>
-					<alt mandatory="true" name="CRANKMODEL">
+					<alt mandatory="true" name="GumballCrankModel">
 						<description>
 							
 						</description>
-						<feature mandatory="true" name="ONEQTR">
+						<feature mandatory="true" name="GumballOneQuarter">
 							<description>
 								
 							</description>
 						</feature>
-						<feature mandatory="true" name="TWOQTR">
+						<feature mandatory="true" name="GumballTwoQuarters">
 							<description>
 								
 							</description>
 						</feature>
 					</alt>
-					<feature mandatory="true" name="SLOTMODEL">
+					<feature mandatory="true" name="GumballSlotModel">
 						<description>
 							
 						</description>
@@ -35,12 +35,12 @@
 					<description>
 						
 					</description>
-					<feature mandatory="true" name="COST25">
+					<feature mandatory="true" name="GumballCost25">
 						<description>
 							
 						</description>
 					</feature>
-					<feature mandatory="true" name="COST50">
+					<feature mandatory="true" name="GumballCost50">
 						<description>
 							
 						</description>
@@ -51,18 +51,31 @@
 		<constraints>
 			<rule>
 				<imp>
-					<var>ONEQTR</var>
-					<var>COST25</var>
+					<var>GumballOneQuarter</var>
+					<var>GumballCost25</var>
 				</imp>
 			</rule>
 			<rule>
 				<imp>
-					<var>TWOQTR</var>
-					<var>COST50</var>
+					<var>GumballTwoQuarters</var>
+					<var>GumballCost50</var>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>GumballSlotModel</var>
+					<var>GumballCost50</var>
 				</imp>
 			</rule>
 		</constraints>
 		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
 		<comments/>
-		<featureOrder userDefined="false"/>
+		<featureOrder userDefined="true">
+			<feature name="GumballCrankModel"/>
+			<feature name="GumballOneQuarter"/>
+			<feature name="GumballTwoQuarters"/>
+			<feature name="GumballSlotModel"/>
+			<feature name="GumballCost25"/>
+			<feature name="GumballCost50"/>
+		</featureOrder>
 	</featureModel>

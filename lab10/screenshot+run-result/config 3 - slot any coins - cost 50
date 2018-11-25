@@ -7,10 +7,10 @@ public static int GumballMachine.ajc$get$coinValue(GumballMachine)
 public static void GumballMachine.ajc$set$coinValue(GumballMachine,int)
 public static int GumballMachine.ajc$get$cost(GumballMachine)
 public static void GumballMachine.ajc$set$cost(GumballMachine,int)
-public void GumballMachine.ajc$privMethod$SLOTMODEL$GumballMachine$setCoinValue(int)
-public void GumballMachine.ajc$privMethod$SLOTMODEL$GumballMachine$insertCoinValue(int)
-public void GumballMachine.ajc$privMethod$SLOTMODEL$GumballMachine$ejectGumball()
-public void GumballMachine.ajc$privMethod$COST50$GumballMachine$setCost(int)
+public void GumballMachine.ajc$privMethod$GumballSlotModel$GumballMachine$ejectGumball()
+public void GumballMachine.ajc$privMethod$GumballSlotModel$GumballMachine$insertCoinValue(int)
+public void GumballMachine.ajc$privMethod$GumballSlotModel$GumballMachine$setCoinValue(int)
+public void GumballMachine.ajc$privMethod$GumballCost50$GumballMachine$setCost(int)
 public final void java.lang.Object.wait(long,int) throws java.lang.InterruptedException
 public final native void java.lang.Object.wait(long) throws java.lang.InterruptedException
 public final void java.lang.Object.wait() throws java.lang.InterruptedException
@@ -20,34 +20,54 @@ public native int java.lang.Object.hashCode()
 public final native java.lang.Class java.lang.Object.getClass()
 public final native void java.lang.Object.notify()
 public final native void java.lang.Object.notifyAll()
-
-
-***** Gumball Machine Slot Model 2.0 *****
-
-
+***** Gumball Machine Crank Model 2.0 *****
 Gumball Inventory: 10
 Gumball Cost:      50
 Coin Value:        0
 => Insert Coin: 10 cents
 Added 10 cents...
+Gumball Inventory: 10
+Gumball Cost:      50
+Coin Value:        10
 => Insert Coin: 5 cents
 Added 5 cents...
+Gumball Inventory: 10
+Gumball Cost:      50
+Coin Value:        15
 => Return Coins...
 Change Return: 15 cents.
+Gumball Inventory: 10
+Gumball Cost:      50
+Coin Value:        0
 => Insert Coin: 50 cents
 Added 50 cents...
 Gumball Ejected!
 Change Return: 0 cents.
+Gumball Inventory: 9
+Gumball Cost:      50
+Coin Value:        0
 => Insert Coin: 100 cents
 Added 100 cents...
 Gumball Ejected!
 Change Return: 50 cents.
+Gumball Inventory: 8
+Gumball Cost:      50
+Coin Value:        0
 => Insert Coin: 25 cents
 Added 25 cents...
+Gumball Inventory: 8
+Gumball Cost:      50
+Coin Value:        25
 => Insert Coin: 10 cents
 Added 10 cents...
+Gumball Inventory: 8
+Gumball Cost:      50
+Coin Value:        35
 => Insert Coin: 5 cents
 Added 5 cents...
+Gumball Inventory: 8
+Gumball Cost:      50
+Coin Value:        40
 => Insert Coin: 10 cents
 Added 10 cents...
 Gumball Ejected!
