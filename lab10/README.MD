@@ -44,10 +44,8 @@ In the constructor of the GumballMachine class, according to the different user'
                 gmType = new GMType(new int[]{}, 0);  // can add any types here
                 break;
     }
-    
-    In the lab10, the type of the gumball machine is decided by the configuration before the main start to run. The whole procedure is intervened by the .aj file. 
-
-
+  
+In lab 10, the set of the cost and the accepeted coin is also decided in advance, but it is decided by the configuration file and model.xml. Model.xml is used to define the constraints and relations of different features which togetherly build the all possibilities. Before the main code run, user can choose only one valid possibility to run. 
 
 #Part Two : Model.xml:
 
