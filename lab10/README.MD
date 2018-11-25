@@ -23,9 +23,10 @@ In lab 1: "GumballMachine" class included a "nested" class "GMType"to record the
             ...
         }
     }
+    ```
     
-    It is very easy to add any another type of gumball machine in the constructor of GumballMachine Class: 
-    ```Java
+In the constructor of the GumballMachine class, according to the different user's input, the cost and the accepted coins can be be decided. There are three different types.
+```Java
     switch (machineType) {
             case 0:
                 gmType = new GMType(new int[]{25}, 25); // quarter machine
@@ -42,15 +43,13 @@ In lab 1: "GumballMachine" class included a "nested" class "GMType"to record the
                 gmType = new GMType(new int[]{}, 0);  // can add any types here
                 break;
     }
-  
-  
-  
-  
-
-
-Model.xml:
+    ```
+    In the lab10, the type of the gumball machine is decided by the configuration before the main start to run. The whole procedure is intervened by the .aj file. 
+#Part Two : Model.xml:
 
 ![image](https://github.com/Yi-Lai-SJSU/cmpe202/blob/master/lab10/screenshot%2Brun-result/model.png)
+
+#Part Three : configuaration and output:
 
 1. Config 1 - crankmodel accept quarter only and the cost is 25 cents.
 
