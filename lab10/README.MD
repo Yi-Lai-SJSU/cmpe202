@@ -1,5 +1,6 @@
 #Part one : Compare the Lab1 and Lab10
 In lab 1: "GumballMachine" class included a "nested" class "GMType"to record the coins set and cost for gumball machine.
+
     ```Java
     class GMType {
         private int[] accepted_Coins;
@@ -22,9 +23,8 @@ In lab 1: "GumballMachine" class included a "nested" class "GMType"to record the
             ...
         }
     }
-  
     
-    
+    It is very easy to add any another type of gumball machine in the constructor of GumballMachine Class: 
     ```Java
     switch (machineType) {
             case 0:
@@ -41,7 +41,7 @@ In lab 1: "GumballMachine" class included a "nested" class "GMType"to record the
             default:
                 gmType = new GMType(new int[]{}, 0);  // can add any types here
                 break;
-        }
+    }
   
   
   
